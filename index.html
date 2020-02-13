@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TrAw</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <script src="js/preloader.js"></script>
+    <div id="preloader-page" class="preloader">
+        <div class="loader"><div class="loader-2"></div></div>
+    </div>
+    <section class="join__block unvisible" id="join-block">
+        <div class="join__window">
+            <div class="close__btn" id="join-close"></div>
+            <form action="">
+                <span class="question">
+                    Are you ready?
+                </span>
+                <br>
+                    <input type="radio" name="ready" value="yes" id="yes">
+                <label for="yes" class="radio__label">
+                    Yes
+                </label>
+                <br>
+                    <input type="radio" name="ready" value="no" id="no">
+                <label for="no" class="radio__label">
+                    No
+                </label>
+                <input class="form__input" type="email" name="email" id="mail" placeholder="email" required>
+                <input class="form__input" type="tel" name="tel" id="telNum" placeholder="+1 234 567-89-00" required>
+                <input type="submit" id="joinButton" value="Join">
+            </form>
+        </div>
+    </section>
+    <header class="navigation__block">
+        <div class="navigation__humb"></div>
+        <nav class="navigation__button">TrAw</nav>
+    </header>
+    <section class="menu__block hidden">
+        <div class="menu__info__block">
+            <div class="menu__contact">
+                <h1>Contact us</h1>
+                <ul>
+                    <li class="menu__link"><a href="mailto:kylfyk@bk.ru">kylfyk@bk.ru</a></li>
+                    <li class="menu__link"><a href="#">Telegram: @av_maksiim</a></li>
+                    <li class="menu__link"><a href="git-hub.io">git-hub.io</a></li>
+                </ul>
+            </div>
+            <div class="menu__order">
+                <h1>Make order</h1>
+                <ul>
+                    <li class="menu__link"><a href="#">JOIN US</a></li>
+                </ul>
+            </div>
+        </div>
+        <span class="menu__about">
+            Designed by <a href="git-hub.io">kylfyk</a>
+        </span>
+    </section>
+    <section class="trip__block">
+        <section class="trip__block__bg trip__block__bg1" id="backG">
+
+        </section>
+        <section class="trip__block__bg trip__block__bg2 unvisible" id="backG2">
+
+        </section>
+        <section class="trip__block__bg trip__block__bg3 unvisible" id="backG3">
+
+        </section>
+        <section class="trip__main">
+            <h1 class="trip__utp">Trips to spectacular <br> sites</h1>
+            <section class="trip__button__block">
+                <span class="text__join">
+                    Are you with us?
+                </span>
+                <div class="btn__join" id="btn">
+                    Join
+                </div>
+            </section>
+        </section>
+        <section class="trip__start__info">
+            started at <span class="trip__date">20.05.2020</span>
+        </section>
+    </section>
+    <footer class="trip__city__block">
+        <div class="trip__city trip__city__sw selected">Switzerland</div>
+        <div class="trip__city trip__city__fr">France</div>
+        <div class="trip__city trip__city__an">Andorra</div>
+    </footer>
+    <script src="js/menu.js"></script>
+    <script src="js/paralax.js"></script>
+    <script src="js/sliderJoin.js"></script>
+</body>
+</html>

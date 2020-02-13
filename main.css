@@ -1,0 +1,655 @@
+/* Specifications */
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.preloader {
+    position: fixed;
+    background-color: black;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid black;
+    animation: 2s load infinite linear;
+}
+
+.loader-2 {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid black;
+    animation: 1s load2 infinite linear;
+}
+
+li {
+    list-style-type: none;
+    text-align: left;
+    letter-spacing: 3px;
+}
+/* Specifications */
+
+/* Animations */
+
+@-webkit-keyframes load2 {
+    from {
+        border-bottom: 2px solid white;
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        border-bottom: 2px solid white;
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+                transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes load2 {
+    from {
+        border-bottom: 2px solid white;
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        border-bottom: 2px solid white;
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+                transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@-webkit-keyframes load {
+    from {
+        border-top: 2px solid white;
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        border-top: 2px solid white;
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+                transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes load {
+    from {
+        border-top: 2px solid white;
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        border-top: 2px solid white;
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+                transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Animations */
+
+.navigation__block {
+    position: absolute;
+    height: 25px;
+    top: 7%;
+    left: 10%;
+    display: flex;
+    cursor: pointer;
+    transition: 400ms;
+    z-index: 7;
+}
+
+.navigation__button {
+    width: 50px;
+    position: relative;
+    font-size: 25px;
+    font-weight: 700;
+    transition: color 400ms, transform 400ms;
+}
+
+.navigation__humb {
+    width: 30px;
+    border-top: 1px solid white;
+    border-color: white;
+    height: 20px;
+    margin-right: 15px;
+    margin-top: 2px;
+    position: relative;
+    transition: transform 400ms;
+}
+
+.navigation__humb::before {
+    content: "";
+    height: 1px;
+    width: 75%;
+    border-top: 1px solid white;
+    position: absolute;
+    top: 50%;
+    transition: 400ms;
+    border-color: inherit;
+}
+
+.navigation__humb::after {
+    content: "";
+    height: 1px;
+    width: 50%;
+    border-top: 1px solid white;
+    position: absolute;
+    top: 100%;
+    transition: width 400ms, transform 400ms;
+    border-color: inherit;
+}
+
+.navigation__block:hover .navigation__humb::before {
+    width: 0;
+}
+
+.navigation__block:hover .navigation__humb{
+    transform: rotate(22.5deg);
+}
+
+.navigation__block:hover .navigation__humb::after {
+    width: 30px;
+    transform: rotate(-45deg) translateX(8px);
+}
+
+.navigation__block:hover .navigation__button {
+    transform: scale(0.9);
+}
+
+.trip__block {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.trip__block__bg {
+    position: absolute;
+    width: 110vw;
+    height: 110vh;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: translate 50ms;
+}
+
+.trip__block__bg1 {
+    background-image: url('img/switzer.jpg');
+}
+
+.trip__block__bg2 {
+    background-image: url('img/france.jpg');
+}
+
+.trip__block__bg3 {
+    background-image: url('img/andorra.jpg');
+}
+
+.trip__main {
+    position: relative;
+    top: 20%;
+    left: 15%;
+    width: 80%;
+    z-index: 1;
+}
+
+.trip__utp {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-weight: 700;
+    font-size: 72px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    line-height: 1;
+}
+
+.trip__button__block {
+    width: 100%;
+    position: relative;
+    top: 0;
+    display: flex;
+    height: 75px;
+}
+
+.text__join {
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin-left: 30px;
+    margin-top: 18px;
+}
+
+.btn__join {
+    margin-left: 100px;
+    width: 280px;
+    height: 75px;
+    border: 1px solid white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 23px;
+    letter-spacing: 2.5px;
+    transition: color 400ms, border-color 400ms;
+    cursor: pointer;
+}
+
+.btn__join:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.trip__start__info {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    z-index: 3;
+    text-align: center;
+}
+
+.trip__city__block {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    letter-spacing: 3px;
+    z-index: 1;
+}
+
+.trip__city {
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.selected {
+    position: relative;
+    transition-delay: 200ms;
+}
+
+.selected::after, .selected::before {
+    content: "";
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    transition: transform 400ms, right 400ms, left 400ms;
+}
+
+.selected::after {
+    top: -3px;
+    right: 0px;
+    transform: translateX(10px);
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.selected::before {
+    bottom: -3px;
+    right: 0px;
+    transform: translateX(-10px);
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.selected:hover::before {
+    right: 0px;
+    transform: translateX(0px);
+}
+
+.selected:hover::after {
+    left: 0px;
+    transform: translateX(0px);
+}
+
+.menu__block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 4;
+    color: #222222;
+    transition: 400ms;
+}
+
+.hidden {
+    transition: 700ms;
+    transform: translateX(-100vw);
+    transition-timing-function: ease;
+}
+
+.menu__info__block {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    left: 25%;
+}
+
+.menu__contact, .menu__order {
+    margin-top: 50px;
+}
+
+.menu__info__block h1 {
+    text-align: left;
+}
+
+.menu__link {
+    margin: 20px;
+    margin-left: 50px;
+    position: relative;
+}
+
+.menu__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0px;
+    height: 1px;
+    background-color: #222;
+    transition: width 400ms;
+}
+
+.menu__link:hover::after {
+    width: 100px;
+}
+
+.menu__about {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.join__block {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(34, 34, 34, 0.4);
+    z-index: 10;
+    transition: 400ms;
+}
+
+.join__window {
+    position: absolute;
+    top: 10vh;
+    height: 80vh;
+    width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 7px;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 0px 40px  rgba(34, 34, 34, 0.9);;
+}
+
+.close__btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.close__btn::before, .close__btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 15px;
+    left: 0;
+    background-color: black;
+    transform: rotate(45deg);
+    transition: 400ms;
+}
+
+.close__btn::after {
+    transform: rotate(-45deg);
+}
+
+.close__btn:hover::after {
+    transform: rotate(45deg);
+}
+
+.close__btn:hover::before {
+    transform: rotate(-45deg);
+}
+
+.question {
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 25px;
+}
+
+input[type="radio"]:checked, 
+input[type="radio"]:not(:checked) 
+{
+    position: absolute;
+    left: -9999px;
+}
+
+input[type="radio"] + .radio__label {
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    padding-left: 30px;
+    margin: 7px;
+    width: 100px;
+    cursor: pointer;
+}
+
+input[type="radio"] + .radio__label::after, input[type="radio"] + .radio__label::before {
+    content: '';
+    position: absolute;
+}
+
+input[type="radio"] + .radio__label::after {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #222;
+    left: 0;
+    top: 1px;
+    transition: 600ms;
+    opacity: 1;
+}
+
+input[type="radio"] + .radio__label::before {
+    opacity: 0;
+    left: 0;
+    top: 1px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #222;
+    transition: 600ms;
+    transform: rotate(45deg);
+}
+
+input[type="radio"]:checked + .radio__label::before {
+    opacity: 1;
+}
+
+input[type="radio"]:checked + .radio__label::after {
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__input {
+    width: 200px;
+    background-color: transparent;
+    color: #222;
+    padding: 5px;
+    margin: 10px;
+    border: none;
+    border-bottom: 1px solid #222;
+}
+
+#joinButton {
+    width: 100px;
+    border: 1px solid #222;
+    background-color: white;
+    height: 30px;
+    margin-top: 100px;
+    transition: 400ms;
+}
+
+#joinButton:hover {
+    background-color: #222;
+    color: white
+}
+
+
+.unvisible {
+    z-index: -1;
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    .trip__utp {
+        font-size: 30px;
+        padding: 20px;
+    }
+
+    .text__join {
+        font-size: 15px;
+        margin-left: 0px;
+    }
+
+    .trip__button__block {
+        flex-direction: column;
+        align-items: center;
+        height: 100px;
+    }
+
+    .btn__join {
+        margin-left: 0px;
+        margin-top: 15px;
+        width: 100px;
+        font-size: 10px;
+        height: 40px;
+    }
+
+    .trip__main {
+        width: 100%;
+        left: 0;
+    }
+
+    .trip__city__block {
+        font-size: 10px;
+    }
+
+    .trip__start__info {
+        font-size: 13px;
+    }
+
+    .join__window {
+        width: 300px;
+    }
+
+    .menu__link {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    .menu__info__block {
+        width: 90%;
+        left: 5%;
+    }
+
+    .menu__about {
+        font-size: 10px;
+    }
+
+    .navigation__button {
+        font-size: 15px;
+    }
+
+    .navigation__humb {
+        margin-top: 0px;
+        height: 18px;
+        width: 20px;
+    }
+
+    .navigation__block:hover .navigation__humb::after {
+        width: 20px;
+    }
+
+    .trip__block__bg1 {
+        background-image: url('img/switzer.jpg');
+    }
+    
+    .trip__block__bg2 {
+        background-image: url('img/france.jpg');
+    }
+    
+    .trip__block__bg3 {
+        background-image: url('img/andorra.jpg');
+    }
+
+    .trip__block__bg {
+        width: 120vw;
+    }
+}
+
+@media (max-width: 1024px) {
+    .trip__start__info {
+        bottom: 15%;
+    }
+}
